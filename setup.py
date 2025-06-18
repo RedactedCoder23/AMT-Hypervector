@@ -11,7 +11,7 @@ setup(
         "transformers",
         "python-chess",
         "pytest",
-        "torchhd @ git+https://github.com/hyperdimensional-computing/torchhd.git#egg=torchhd",
+        "torchhd @ git+https://github.com/hyperdimensional-computing/torchhd.git@main#egg=torchhd",
     ],
     entry_points={
         "console_scripts": [
