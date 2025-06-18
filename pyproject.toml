@@ -19,8 +19,11 @@ dependencies = ["numpy>=1.23", "pyyaml>=6.0"]
 
 [project.scripts]
 bhre = "amt.cli:main"
+selfplay = "selfplay_chess.train:main"
+ui = "ui.app:main"
 
 [project.optional-dependencies]
-dev = ["pytest", "mypy", "flake8", "build", "mkdocs", "mkdocs-material"]
+dev = ["pytest", "mypy", "flake8", "mkdocs", "mkdocs-material"]
 torch = ["torch>=2.0", "torchvision>=0.14", "torchaudio>=2.0"]
 examples = ["transformers>=4.0", "python-chess>=1.7.0", "torchhd>=0.2.0"]
+ui = ["flask"]

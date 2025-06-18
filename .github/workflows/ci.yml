@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: |
-          pip install -e .[dev]
+          pip install -e .[dev,examples,ui]
           pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
       - name: Lint: black
         run: black --check src tests
@@ -24,6 +24,4 @@ jobs:
       - name: Test suite
         run: pytest --maxfail=1 --disable-warnings -q
       - name: Build docs with MkDocs
-        run: |
-          pip install mkdocs mkdocs-material
-          mkdocs build --strict
+        run: mkdocs build --strict
