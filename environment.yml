@@ -4,6 +4,6 @@ dependencies:
   - python=3.9
   - pip
   - pip:
-      - bhre-project
+      - AMT-Hypervector
       - pytest
       - mypy

@@ -1,5 +1,7 @@
 """Simple ADF memory updater."""
+
 import numpy as np
+
 
 class ADFMemory:
     def __init__(self, dim: int):

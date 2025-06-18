@@ -1,6 +1,6 @@
-![CI](https://github.com/you/bhre-project/actions/workflows/ci.yml/badge.svg)
-![PyPI](https://img.shields.io/pypi/v/bhre-project)
-![License](https://img.shields.io/github/license/you/bhre-project)
+![CI](https://github.com/RedactedCoder23/AMT-Hypervector/actions/workflows/ci.yml/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/AMT-Hypervector)
+![License](https://img.shields.io/github/license/RedactedCoder23/AMT-Hypervector)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/you/bhre-project/main)
 # AMT-Hypervector
 
@@ -13,13 +13,12 @@
 
 ## Quick Start
 ```bash
-git clone https://github.com/yourusername/AMT-Hypervector.git
+git clone https://github.com/RedactedCoder23/AMT-Hypervector.git
 cd AMT-Hypervector
-pip install -e .
-# Run chess demo
-python src/plugins/chess_toy/selfplay_chess.py
-# Run sentiment demo
-python examples/sentiment_analysis/run_demo.py
-# Run GPT-2 demo
-python examples/tiny_gpt2_lora/run_demo.py
+pip install -e .[dev]
+bhre --config config.yaml
 ```
+
+## Examples
+- [Encode Demo](docs/examples/encode_demo.ipynb)
+- [Chess Self-Play Demo](docs/examples/chess_selfplay.ipynb)

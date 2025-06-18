@@ -6,3 +6,6 @@ encode_rules:
     positive: true
   - text: "move:d7d5"
     positive: false
+query_rules:
+  - text: "move:e2e4"
+  - text: "move:d7d5"
