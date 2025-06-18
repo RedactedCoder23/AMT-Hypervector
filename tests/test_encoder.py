@@ -1,9 +1,9 @@
 import torch
-from hypervector_core import encode_token
+from hypervector_core.encoder import encode_token
 
 
-def test_encode_token_deterministic():
-    hv1 = encode_token("foo")
-    hv2 = encode_token("foo")
-    assert torch.allclose(hv1, hv2)
-    assert hv1.shape == (6,)
+def test_encode_shapes():
+    v1 = encode_token("foo", dims=6)
+    v2 = encode_token("foo", dims=6)
+    assert v1.shape == (6,)
+    assert torch.allclose(v1, v2)

@@ -1,3 +1,1 @@
-# Overview Paper
-
-This is a placeholder for the overview paper describing the AMT hypervector framework.
+Contents of current_paper.txt would go here.

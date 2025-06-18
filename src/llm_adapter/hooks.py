@@ -1,5 +1,7 @@
+from transformers import GPT2Model
 
-def apply_hooks(model):
-    """Placeholder for hook application."""
-    # In a full system, hooks would modify the model for hypervector integration
-    return model
+
+def patch_model(model: GPT2Model, adapter):
+    for name, module in model.named_modules():
+        if name.endswith("mlp"):
+            module.add_module("hv_adapter", adapter)

@@ -1,10 +1,8 @@
 import heapq
-from typing import List
 
 
 class StickyPool:
-    """Top-K heap of hypervectors keyed by an error metric."""
-
+    """Keeps top-K hypervectors by error score for replay."""
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.heap = []
@@ -16,5 +14,5 @@ class StickyPool:
         else:
             heapq.heappushpop(self.heap, entry)
 
-    def sample(self, k: int) -> List:
+    def sample(self, k: int):
         return [hv for (_, hv) in heapq.nlargest(k, self.heap)]

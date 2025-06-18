@@ -1,8 +1,12 @@
-class LLMAdapter:
-    """Tiny adapter placeholder."""
+import torch.nn as nn
 
-    def __init__(self, model):
-        self.model = model
 
-    def forward(self, *args, **kwargs):
-        return self.model(*args, **kwargs)
+class HypervectorAdapter(nn.Module):
+    """LoRA-style adapter injecting hypervector signals."""
+    def __init__(self, hidden_size: int, r: int = 4):
+        super().__init__()
+        self.down = nn.Linear(hidden_size, r, bias=False)
+        self.up   = nn.Linear(r, hidden_size, bias=False)
+
+    def forward(self, x):
+        return x + self.up(self.down(x))
