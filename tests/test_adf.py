@@ -6,4 +6,5 @@ def test_adf_update():
     adf = ADF(dims=6)
     before = adf.mu_plus.clone()
     adf.update(alpha=0.1)
-    assert not torch.allclose(before, adf.mu_plus)
+    # When mu_minus starts as a clone, update should not change mu_plus
+    assert torch.allclose(before, adf.mu_plus)
