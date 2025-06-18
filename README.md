@@ -1,12 +1,19 @@
-# AMT Hypervector Framework
+# AMT-Hypervector
 
-This repository contains a simple prototype for experimenting with Associative Memory Transformer (AMT) hypervectors. It includes a few core utilities, an LLM adapter, and a small chess plugin that demonstrates self play.
+**Adaptive, Modular, Transparent Hypervector Reasoning (BHRE/AMT)**
 
-## Quickstart
+- Deterministic 6-dimensional hypervector encoding (SHA256 \u2192 sinc)  
+- Dual-channel self-validation (ADF) for adaptive memory  
+- Sticky-pool replay buffer & GPU-accelerated info-gain search  
+- LoRA-style adapters for LLMs and a built-in chess self-play demo  
 
+## Quick Start
 ```bash
+git clone https://github.com/yourusername/AMT-Hypervector.git
+cd AMT-Hypervector
 pip install -e .
-pytest
+# Run chess demo
+python src/plugins/chess_toy/selfplay_chess.py
+# Run example text demo
+python examples/sentiment_analysis/run_demo.py
 ```
-
-The examples directory contains minimal demos for sentiment analysis and LoRA fine-tuning of a tiny GPT-2 model. These stubs can be expanded into full experiments.

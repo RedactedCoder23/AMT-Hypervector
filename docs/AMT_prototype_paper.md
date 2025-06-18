@@ -1,3 +1,1 @@
-# Prototype Paper
-
-This is a placeholder for the prototype paper for the AMT system.
+Contents of AMT.zip/docs/overview_paper.md would go here.
