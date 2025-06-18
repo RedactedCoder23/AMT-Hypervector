@@ -1,0 +1,6 @@
+transformers
+torch>=1.13
+numpy
+python-chess
+pytest
+torch-hd @ git+https://github.com/hyperdimensional-computing/torchhd.git
