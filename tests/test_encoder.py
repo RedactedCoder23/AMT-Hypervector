@@ -11,3 +11,4 @@ def test_encode_shape_and_consistency():
     # shape should be (6,) and deterministic
     assert hv1.shape == (6,)
     assert np.allclose(hv1, hv2)
+    assert np.isclose(np.linalg.norm(hv1), 1.0)

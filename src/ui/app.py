@@ -1,41 +1,31 @@
-"""Flask web UI exposing BHRE operations."""
-
-from flask import Flask, jsonify, request
-
+from flask import Flask, request, jsonify
 from amt.encoder import HypervectorEncoder
 from amt.adf_update import ADFMemory
 
 app = Flask(__name__)
-encoder = HypervectorEncoder(dim=6, alpha=[1.0] * 6)
-memory = ADFMemory(dim=6)
+mem = ADFMemory(dim=6)
+enc = HypervectorEncoder(dim=6)
 
 
-@app.route("/")
-def index() -> str:
-    return "OK"
+@app.route("/encode")
+def encode():
+    txt = request.args.get("text", "")
+    return jsonify(hv=enc.encode(txt).tolist())
 
 
-@app.get("/encode")
-def encode() -> any:
-    text = request.args.get("text", "")
-    hv = encoder.encode(text)
-    return jsonify(hv.tolist())
+@app.route("/update", methods=["POST"])
+def update():
+    js = request.json
+    hv = enc.encode(js["text"])
+    mem.update(hv, js.get("positive", True))
+    return jsonify(status="ok")
 
 
-@app.post("/update")
-def update() -> any:
-    data = request.get_json(force=True)
-    hv = encoder.encode(data.get("text", ""))
-    memory.update(hv, positive=bool(data.get("positive", True)))
-    return jsonify({"status": "updated"})
-
-
-@app.get("/similarity")
-def similarity() -> any:
-    text = request.args.get("text", "")
-    hv = encoder.encode(text)
-    scores = memory.similarity_table([hv])
-    return jsonify(scores)
+@app.route("/similarity")
+def similarity():
+    hv = enc.encode(request.args.get("text", ""))
+    pos, neg = mem.similarity_table([hv])[0]
+    return jsonify(positive=pos, negative=neg)
 
 
 def main() -> None:
