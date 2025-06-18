@@ -1,9 +1,11 @@
 """Command line interface for BHRE hypervector experiments."""
 
 import argparse
-from .encoder import HypervectorEncoder
-from .adf_update import ADFMemory
+
 import yaml  # type: ignore
+
+from .adf_update import ADFMemory
+from .encoder import HypervectorEncoder
 
 
 def main():

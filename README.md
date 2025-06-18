@@ -1,7 +1,7 @@
 ![CI](https://github.com/RedactedCoder23/AMT-Hypervector/actions/workflows/ci.yml/badge.svg)
 ![PyPI](https://img.shields.io/pypi/v/AMT-Hypervector)
 ![License](https://img.shields.io/github/license/RedactedCoder23/AMT-Hypervector)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/you/bhre-project/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedactedCoder23/AMT-Hypervector/main)
 # AMT-Hypervector
 
 **Adaptive, Modular, Transparent Hypervector Reasoning (BHRE/AMT)**

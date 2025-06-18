@@ -1,5 +1,6 @@
 """Simple learning rate scheduler placeholder."""
 
+
 class DummyScheduler:
     def __init__(self, lr: float):
         self.lr = lr
