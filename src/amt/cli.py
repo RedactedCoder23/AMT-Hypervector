@@ -1,7 +1,7 @@
 import argparse
 from .encoder import HypervectorEncoder
 from .adf_update import ADFMemory
-import yaml
+import yaml  # type: ignore
 
 def main():
     parser = argparse.ArgumentParser(prog="bhre")
