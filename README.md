@@ -8,8 +8,7 @@
 
 - Deterministic 6-dimensional hypervector encoding (SHA256 → sinc)
 - Dual-channel self-validation (ADF) for adaptive memory
-- Sticky-pool replay buffer & GPU-accelerated info-gain search
-- LoRA-style adapters for LLMs and a built-in chess self-play demo
+- Self-play chess demo and simple Flask API
 
 ## Quick Start
 ```bash
@@ -22,8 +21,6 @@ bhre --config config.yaml
 ## Examples
 - [Encode Demo](docs/examples/encode_demo.ipynb)
 - [Chess Self-Play Demo](docs/examples/chess_selfplay.ipynb)
-- Also see `examples/sentiment_analysis/run_demo.py` for a text classification demo
-  and `examples/tiny_gpt2_lora/run_demo.py` for a LoRA fine-tuning example.
 
 ## Topics
 - hypervectors

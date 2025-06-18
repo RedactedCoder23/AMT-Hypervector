@@ -1,10 +1,10 @@
 import hashlib
 import numpy as np
-from typing import Sequence
+from typing import Sequence, Optional
 
 
 class HypervectorEncoder:
-    def __init__(self, dim: int = 6, alpha: Sequence[float] = None):
+    def __init__(self, dim: int = 6, alpha: Optional[Sequence[float]] = None):
         self.dim = dim
         self.alpha = np.array(alpha if alpha is not None else [1.0] * dim)
 

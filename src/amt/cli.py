@@ -1,7 +1,7 @@
 """BHRE CLI: encode, update, and query similarity with ADFMemory"""
 
 import argparse
-import yaml
+import yaml  # type: ignore[import]
 from amt.encoder import HypervectorEncoder
 from amt.adf_update import ADFMemory
 
