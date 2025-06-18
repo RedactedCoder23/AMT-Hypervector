@@ -1,5 +1,5 @@
 install:
-	pip install -e .[dev]
+	pip install -e .[dev,examples,ui]
 
 lint:
 	black --check src tests
@@ -14,9 +14,7 @@ test:
 docs:
 	mkdocs build --strict
 
-docs-build: docs
-
 build:
 	python -m build
 
-.PHONY: install lint typecheck test docs docs-build build
+.PHONY: install lint typecheck test docs build
