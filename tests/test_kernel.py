@@ -1,5 +1,7 @@
-from amt.kernel import cosine_similarity
 import numpy as np
+
+from amt.kernel import cosine_similarity
+
 
 def test_cosine_similarity():
     a = np.array([1.0, 0.0, 0.0])

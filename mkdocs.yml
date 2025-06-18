@@ -1,0 +1,10 @@
+site_name: AMT Hypervector Docs
+nav:
+  - Home: index.md
+  - Paper: paper.md
+  - Quickstart: tutorials/quickstart.md
+  - Examples:
+    - Encode Demo: examples/encode_demo.ipynb
+    - Chess Self-Play: examples/chess_selfplay.ipynb
+theme:
+  name: material

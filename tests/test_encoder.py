@@ -1,4 +1,5 @@
 import numpy as np
+
 from amt.encoder import HypervectorEncoder
 
 

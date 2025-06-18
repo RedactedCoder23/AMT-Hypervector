@@ -1,5 +1,7 @@
 """Simple MLP model using numpy."""
+
 import numpy as np
+
 
 class MLP:
     def __init__(self, input_dim: int, hidden_dim: int):

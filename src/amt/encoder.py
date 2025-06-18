@@ -1,8 +1,9 @@
 """Deterministic hypervector encoder."""
-import hashlib
-import numpy as np
 
+import hashlib
 from typing import Sequence
+
+import numpy as np
 
 
 class HypervectorEncoder:
@@ -12,7 +13,7 @@ class HypervectorEncoder:
 
     def encode(self, text: str) -> np.ndarray:
         h = hashlib.sha256(text.encode()).digest()
-        v = np.frombuffer(h[:self.dim], dtype=np.uint8).astype(np.float32)
+        v = np.frombuffer(h[: self.dim], dtype=np.uint8).astype(np.float32)
         v = (v / 255.0) * 2.0 - 1.0
         v /= np.linalg.norm(v) + 1e-9
         hv = np.sinc(v * self.alpha)
