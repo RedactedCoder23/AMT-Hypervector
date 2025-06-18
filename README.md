@@ -1,5 +1,8 @@
+![CI](https://github.com/you/bhre-project/actions/workflows/ci.yml/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/bhre-project)
+![License](https://img.shields.io/github/license/you/bhre-project)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/you/bhre-project/main)
 # AMT-Hypervector
-![CI](https://github.com/yourusername/AMT-Hypervector/actions/workflows/tests.yml/badge.svg)
 
 **Adaptive, Modular, Transparent Hypervector Reasoning (BHRE/AMT)**
 

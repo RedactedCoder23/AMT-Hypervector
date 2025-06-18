@@ -1,0 +1,9 @@
+name: bhre-env
+channels: [defaults]
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - bhre-project
+      - pytest
+      - mypy
