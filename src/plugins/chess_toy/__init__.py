@@ -1,0 +1,1 @@
+# Chess plugin package
