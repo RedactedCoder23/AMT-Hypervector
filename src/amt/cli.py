@@ -1,4 +1,9 @@
-"""Command line interface for BHRE hypervector experiments."""
+"""BHRE command line interface.
+
+This module provides a small wrapper around the main hypervector
+components. It loads a YAML configuration file defining ``encode_rules``
+and ``query_rules`` and prints similarity results for each query.
+"""
 
 import argparse
 
@@ -8,15 +13,23 @@ from .adf_update import ADFMemory
 from .encoder import HypervectorEncoder
 
 
-def main():
-    parser = argparse.ArgumentParser(prog="bhre", description=__doc__)
+from typing import List, Optional
+
+
+def main(argv: Optional[List[str]] = None) -> None:
+    parser = argparse.ArgumentParser(
+        prog="bhre",
+        description=__doc__,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
     parser.add_argument(
         "--config",
         "-c",
-        help="YAML config path",
+        metavar="PATH",
+        help="Path to YAML config with encode and query rules",
         required=True,
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     cfg = yaml.safe_load(open(args.config))
     enc = HypervectorEncoder(dim=cfg["dim"], alpha=cfg["alpha"])

@@ -1,8 +1,8 @@
-![CI](https://github.com/RedactedCoder23/AMT-Hypervector/actions/workflows/ci.yml/badge.svg)
-![PyPI](https://img.shields.io/pypi/v/AMT-Hypervector)
-![License](https://img.shields.io/github/license/RedactedCoder23/AMT-Hypervector)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedactedCoder23/AMT-Hypervector/main)
-# AMT-Hypervector
+![CI](https://github.com/RedactedCoder23/amt-hypervector/actions/workflows/ci.yml/badge.svg)
+![PyPI](https://img.shields.io/pypi/v/amt-hypervector)
+![License](https://img.shields.io/github/license/RedactedCoder23/amt-hypervector)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RedactedCoder23/amt-hypervector/main)
+# amt-hypervector
 
 **Adaptive, Modular, Transparent Hypervector Reasoning (BHRE/AMT)**
 
@@ -13,8 +13,8 @@
 
 ## Quick Start
 ```bash
-git clone https://github.com/RedactedCoder23/AMT-Hypervector.git
-cd AMT-Hypervector
+git clone https://github.com/RedactedCoder23/amt-hypervector.git
+cd amt-hypervector
 pip install -e .[dev]
 bhre --config config.yaml
 ```
@@ -22,3 +22,10 @@ bhre --config config.yaml
 ## Examples
 - [Encode Demo](docs/examples/encode_demo.ipynb)
 - [Chess Self-Play Demo](docs/examples/chess_selfplay.ipynb)
+- Also see `examples/sentiment_analysis/run_demo.py` for a text classification demo
+  and `examples/tiny_gpt2_lora/run_demo.py` for a LoRA fine-tuning example.
+
+## Topics
+- hypervectors
+- bayesian
+- online-learning
