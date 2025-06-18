@@ -7,7 +7,11 @@ class ADF:
     def __init__(self, dims: int, device=None):
         v = torch.randn(dims, device=device)
         self.mu_plus  = F.normalize(v, p=2, dim=-1)
+<<<<<< codex/apply-patches-to-adf.py-and-selfplay_chess.py
         # Dual-channel symmetry: start mu_minus identical
+=======
+        # Start mu_minus as an exact clone for dual-channel symmetry
+>>>>>> main
         self.mu_minus = self.mu_plus.clone()
 
     def update(self, alpha: float = 0.5):
