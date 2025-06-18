@@ -1,9 +1,8 @@
-"""Kernel utilities for hypervector similarity."""
-
 import numpy as np
+from typing import Sequence
 
 
-def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
-    a = a / (np.linalg.norm(a) + 1e-9)
-    b = b / (np.linalg.norm(b) + 1e-9)
-    return float(np.dot(a, b))
+def sinc_kernel(x: np.ndarray, y: np.ndarray, alpha: Sequence[float]) -> float:
+    """6-D separable sinc kernel: ∏₀⁵ sinc(α[i]*(x[i]–y[i]))"""
+    diffs = np.array(alpha, dtype=float) * (x - y)
+    return float(np.prod(np.sinc(diffs)))

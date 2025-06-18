@@ -1,13 +1,16 @@
-"""Simple MLP model using numpy."""
-
-import numpy as np
+import torch.nn as nn
 
 
-class MLP:
-    def __init__(self, input_dim: int, hidden_dim: int):
-        self.w1 = np.random.randn(input_dim, hidden_dim) * 0.1
-        self.w2 = np.random.randn(hidden_dim, 1) * 0.1
+class BigMLP(nn.Module):
+    def __init__(self, input_dim: int, hidden_dim: int, output_dim: int):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, output_dim),
+        )
 
-    def __call__(self, x: np.ndarray) -> np.ndarray:
-        h = np.tanh(x @ self.w1)
-        return h @ self.w2
+    def forward(self, x):
+        return self.net(x)

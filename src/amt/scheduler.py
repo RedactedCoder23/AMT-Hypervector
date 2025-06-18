@@ -1,10 +1,6 @@
-"""Simple learning rate scheduler placeholder."""
+from typing import Iterator
 
 
-class DummyScheduler:
-    def __init__(self, lr: float):
-        self.lr = lr
-
-    def step(self):
-        self.lr *= 0.99
-        return self.lr
+def linear_schedule(start: float, end: float, steps: int) -> Iterator[float]:
+    for i in range(steps):
+        yield start + (end - start) * i / (steps - 1)

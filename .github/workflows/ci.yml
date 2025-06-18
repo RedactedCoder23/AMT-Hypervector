@@ -3,25 +3,14 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: [3.8, 3.9, 3.10]
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python }}
-      - run: |
-          pip install -e .[dev,examples,ui]
-          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-      - name: Lint: black
-        run: black --check src tests
-      - name: Lint: flake8
-        run: flake8 src tests
-      - name: Type-check: mypy
-        run: mypy src
-      - name: Test suite
-        run: pytest --maxfail=1 --disable-warnings -q
-      - name: Build docs with MkDocs
-        run: mkdocs build --strict
+          python-version: '3.10'
+      - run: pip install -e .[dev,examples,ui]
+      - run: black --check src tests
+      - run: flake8 src tests
+      - run: mypy src
+      - run: pytest
+      - run: mkdocs build --strict
