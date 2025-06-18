@@ -1,0 +1,8 @@
+# config.yaml
+dim: 6
+alpha: [0.1,0.2,0.3,0.4,0.5,0.6]
+encode_rules:
+  - text: "move:e2e4"
+    positive: true
+  - text: "move:d7d5"
+    positive: false
