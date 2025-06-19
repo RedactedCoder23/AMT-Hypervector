@@ -21,6 +21,7 @@ bhre --config config.yaml
 ## Examples
 - [Encode Demo](docs/examples/encode_demo.ipynb)
 - [Chess Self-Play Demo](docs/examples/chess_selfplay.ipynb)
+- [Math+Binary HV Self-Play](examples/math_bin_hv/README.md)
 
 ## Topics
 - hypervectors

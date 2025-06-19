@@ -5,7 +5,9 @@ from typing import Iterator
 
 
 def load_games(pgn_path: str) -> Iterator[chess.Board]:
-    """Yield successive board states from games in a PGN file."""
+    """
+    Yield board states after each move in every game in the PGN file.
+    """
     with open(pgn_path) as f:
         while True:
             game = chess.pgn.read_game(f)

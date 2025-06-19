@@ -25,5 +25,5 @@ ui = "ui.app:main"
 [project.optional-dependencies]
 dev = ["pytest", "mypy", "flake8", "mkdocs", "mkdocs-material"]
 torch = ["torch>=2.0", "torchvision>=0.14", "torchaudio>=2.0"]
-examples = ["python-chess>=1.7.0"]
+examples = ["python-chess>=1.7.0", "tqdm>=4.66"]
 ui = ["flask"]
