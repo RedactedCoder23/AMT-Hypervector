@@ -17,7 +17,14 @@ import random
 import numpy as np
 from tqdm import trange
 
-import hypervector as hv
+try:
+    from . import hypervector as hv
+except ImportError:  # pragma: no cover - fallback for script mode
+    import hypervector as hv  # type: ignore
+try:
+    from .oracles import checksum_mod7, is_valid_math
+except ImportError:  # pragma: no cover - script mode
+    from oracles import checksum_mod7, is_valid_math  # type: ignore
 
 LOG_FIELDS = ["step", "domain", "sample", "label", "score"]
 
@@ -26,13 +33,13 @@ def random_math_sample():
     a, b = random.randint(0, 19), random.randint(0, 19)
     c = random.randint(0, 38)
     expr = f"{a}+{b}={c}"
-    return expr, (a + b) == c
+    return expr, is_valid_math(expr)
 
 
 def random_bin_sample():
     data = bytes(random.getrandbits(8) for _ in range(8))
     hex_str = data.hex()
-    return hex_str, (sum(data) % 7) == 0
+    return hex_str, checksum_mod7(hex_str)
 
 
 def incremental_mean(current, new, count):

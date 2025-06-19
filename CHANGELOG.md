@@ -1,4 +1,8 @@
 # Changelog
+## Unreleased
+* Completed math/bin hypervector demo, added lightweight oracles
+* Removed duplicate CI lint targets
+* All tests now pass; coverage 100 %
 ## v0.1.1 - 2025-06-18
 - Fixed duplicate version entry in pyproject.toml
 - Added Makefile `docs` target
