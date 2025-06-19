@@ -9,8 +9,8 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip install -e .[dev,examples,ui]
-      - run: black --check src tests
-      - run: flake8 src tests
+      - run: black --check src tests examples
+      - run: flake8 src tests examples
       - run: mypy src
       - run: pytest
       - run: mkdocs build --strict

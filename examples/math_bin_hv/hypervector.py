@@ -2,6 +2,7 @@
 Deterministic text-to-hypervector encoder + cosine helpers.
 Uses SHA-256 → RNG seed → N(0,1) floats → L2 normalization.
 """
+
 import hashlib
 import numpy as np
 

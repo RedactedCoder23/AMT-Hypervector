@@ -20,7 +20,9 @@ dependencies = ["numpy>=1.23", "pyyaml>=6.0"]
 [project.scripts]
 bhre = "amt.cli:main"
 selfplay = "selfplay_chess.train:main"
+eval = "selfplay_chess.eval:main"
 ui = "ui.app:main"
+math-bin = "examples.math_bin_hv.math_bin_selfplay:main"
 
 [project.optional-dependencies]
 dev = ["pytest", "mypy", "flake8", "mkdocs", "mkdocs-material"]

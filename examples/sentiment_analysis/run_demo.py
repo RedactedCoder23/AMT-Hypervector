@@ -19,7 +19,8 @@ def main():
 
     adapter = HypervectorAdapter(hidden_size=6, r=2)
     clf = nn.Linear(6, 1)
-    opt = torch.optim.SGD(list(adapter.parameters()) + list(clf.parameters()), lr=0.2)
+    params = list(adapter.parameters()) + list(clf.parameters())
+    opt = torch.optim.SGD(params, lr=0.2)
 
     for _ in range(200):
         opt.zero_grad()

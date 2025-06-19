@@ -20,7 +20,10 @@ def main():
     with torch.no_grad():
         logits_after = model(**inputs).logits
 
-    attached = all(hasattr(block.mlp, "hv_adapter") for block in model.transformer.h)
+    hv_attr = "hv_adapter"
+    attached = all(
+        hasattr(block.mlp, hv_attr) for block in model.transformer.h
+    )  # noqa: E501
     diff = (logits_after - logits_before).abs().mean().item()
     print("Adapters attached to all blocks:", attached)
     print(f"Mean absolute diff after patch: {diff:.4f}")
