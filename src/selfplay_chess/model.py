@@ -6,8 +6,11 @@ from amt.encoder import HypervectorEncoder
 from amt.adf_update import ADFMemory
 
 
+from typing import Optional
+
+
 class ChessModel:
-    def __init__(self, dim: int = 6, alpha: Sequence[float] = None):
+    def __init__(self, dim: int = 6, alpha: Optional[Sequence[float]] = None):
         self.enc = HypervectorEncoder(dim=dim, alpha=alpha or [1.0] * dim)
         self.mem = ADFMemory(dim=dim)
 
